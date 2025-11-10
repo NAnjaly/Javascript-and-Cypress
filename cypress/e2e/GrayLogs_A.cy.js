@@ -7,7 +7,7 @@ describe('Gray Logs Check', () => {
         return false
       })
       cy.get('input[id="username"]').clear().type("nairA");
-      cy.get('input[id="password"]').clear().type("Cub20cAN!");
+      cy.get('input[id="password"]').clear().type("Cub21cAN!");
       cy.contains("Sign in").click();
 
       cy.contains("Search").click();
@@ -42,12 +42,14 @@ describe('Gray Logs Check', () => {
         const toleranceMs = 10000;
 
          cy.log(`Page time: ${pageTime.toISOString()}`);
-        cy.log(`Local time: ${now.toISOString()}`);
-        cy.log(`Difference: ${diffMs} ms`);
+         cy.log(`Local time: ${now.toISOString()}`);
+         cy.log(`Difference: ${diffMs} ms`);
 
         // Assert the timestamp matches within 1 second
-        expect(diffMs, `Timestamp difference should be <= ${toleranceMs} ms`)
+         expect(diffMs, `Timestamp difference should be <= ${toleranceMs} ms`)
           .to.be.lessThan(toleranceMs);
+
+          cy
 
 
 
