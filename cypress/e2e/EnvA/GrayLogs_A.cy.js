@@ -49,11 +49,7 @@ describe('Gray Logs Check', () => {
          expect(diffMs, `Timestamp difference should be <= ${toleranceMs} ms`)
           .to.be.lessThan(toleranceMs);
 
-          cy
-
-
-
-        
+                  
           });
 
         });
