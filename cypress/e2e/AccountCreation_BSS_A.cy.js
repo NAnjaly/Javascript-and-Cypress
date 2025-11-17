@@ -62,7 +62,7 @@ describe('[Admin] Successful login with Valid Details', () => {
    cy.get('ul').children().eq(10).click();
    cy.get('Input[id="alternateCardRadio"]').click();
    cy.get('div[data-name="cardHolder"] input').should('be.visible').clear().type("Test");
-   cy.get('div[data-name="secretNumber"] input').should('be.visible').clear().type("4539278784602520");
+   cy.get('div[data-name="secretNumber"] input').should('be.visible').clear().type("4532510530900387");
    cy.get('div[data-name="expirationMonth"] input').should('be.visible').clear().type("09");
    cy.get('div[data-name="expirationYear"] input').should('be.visible').clear().type("2027");
 
