@@ -6,6 +6,7 @@ describe('GBFS Check', () => {
         // returning false here prevents Cypress from failing the test
         return false
       })
+
       cy.contains("GBFS").click();
       cy.wait (2000)
       cy.contains('.card-header', 'Env A')
@@ -14,7 +15,7 @@ describe('GBFS Check', () => {
 
         })
 
-        it('checks last_updated timestamp', () => {
+  it('checks last_updated timestamp', () => {
   cy.request('https://a-gbfs-test.cubic-hub.com/gbfs/2-2/en/station_information.json').then((response) => {
   cy.log(JSON.stringify(response.body, null, 2));
   console.log('FULL BODY:', response.body);
