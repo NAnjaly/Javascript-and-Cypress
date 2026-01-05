@@ -11,12 +11,12 @@ describe('GBFS Check', () => {
       cy.wait (2000)
       cy.contains('.card-header', 'Env A')
       cy.get('div[class="multi-collapse row collapse show"]').click();
-      cy.get('[href="https://a-gbfs-test.cubic-hub.com/gbfs/2-2/en/free_bike_status.json"]').click();
+      cy.get('[href="https://b-gbfs-test.cubic-hub.com/gbfs/2-2/en/free_bike_status.json"]').click();
 
         })
 
   it('checks last_updated timestamp', () => {
-  cy.request('https://a-gbfs-test.cubic-hub.com/gbfs/2-2/en/free_bike_status.json').then((response) => {
+  cy.request('https://b-gbfs-test.cubic-hub.com/gbfs/2-2/en/free_bike_status.json').then((response) => {
   cy.log(JSON.stringify(response.body, null, 2));
   console.log('FULL BODY:', response.body);
   const body = typeof response.body === 'string'
@@ -88,12 +88,12 @@ describe('GBFS Check', () => {
       cy.wait (2000)
       cy.contains('.card-header', 'Env A')
       cy.get('div[class="multi-collapse row collapse show"]').click();
-      cy.get('[href="https://a-gbfs-test.cubic-hub.com/gbfs/2-2/en/station_information.json"]').click();
+      cy.get('[href="https://b-gbfs-test.cubic-hub.com/gbfs/2-2/en/station_information.json"]').click();
 
         })
 
   it('checks last_updated timestamp', () => {
-  cy.request('https://a-gbfs-test.cubic-hub.com/gbfs/2-2/en/station_information.json').then((response) => {
+  cy.request('https://b-gbfs-test.cubic-hub.com/gbfs/2-2/en/station_information.json').then((response) => {
   cy.log(JSON.stringify(response.body, null, 2));
   console.log('FULL BODY:', response.body);
   const body = typeof response.body === 'string'
@@ -145,12 +145,12 @@ describe('GBFS Check', () => {
 
       cy.get('div[class="multi-collapse row collapse show"]').click();
 
-      cy.get('[href="https://a-gbfs-test.cubic-hub.com/gbfs/en/station_status.json"]').click();
+      cy.get('[href="https://b-gbfs-test.cubic-hub.com/gbfs/en/station_status.json"]').click();
     
      
     });
   it('checks last_updated timestamp', () => {
-  cy.request('https://a-gbfs-test.cubic-hub.com/gbfs/en/station_status.json').then((response) => {
+  cy.request('https://b-gbfs-test.cubic-hub.com/gbfs/en/station_status.json').then((response) => {
   cy.log(JSON.stringify(response.body, null, 2));        
   console.log('FULL BODY:', response.body);
   const body = typeof response.body === 'string'
@@ -205,13 +205,13 @@ describe('GBFS Check', () => {
 
       cy.get('div[class="multi-collapse row collapse show"]').click();
 
-      cy.get('[href="https://a-gbfs-test.cubic-hub.com/gbfs/2-2/en/vehicle_types.json"]').click();
+      cy.get('[href="https://b-gbfs-test.cubic-hub.com/gbfs/2-2/en/vehicle_types.json"]').click();
 
       
     });
 
   it('checks last_updated timestamp', () => {
-  cy.request('https://a-gbfs-test.cubic-hub.com/gbfs/2-2/en/vehicle_types.json').then((response) => {
+  cy.request('https://b-gbfs-test.cubic-hub.com/gbfs/2-2/en/vehicle_types.json').then((response) => {
   cy.log(JSON.stringify(response.body, null, 2));
   console.log('FULL BODY:', response.body);
   const body = typeof response.body === 'string'

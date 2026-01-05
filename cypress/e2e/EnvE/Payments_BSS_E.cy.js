@@ -1,4 +1,4 @@
-describe('Payments and Transaction Details Check', () => {
+ describe('Payments and Transaction Details Check', () => {
     it('Login to the BSS Console as an Admin user with valid details and Checking the Payments/Transactions Details', () => {
     cy.visit('https://e-bss-test.cubic-hub.com:8443/solstice/main',{failOnStatusCode: false});
 
@@ -6,9 +6,9 @@ describe('Payments and Transaction Details Check', () => {
         // returning false here prevents Cypress from failing the test
         return false
       })
-      cy.get('input[id="username_input"]').clear().type("AnjalyN")
+      cy.get('input[id="username_input"]').clear().type("PadminiA")
       cy.wait(1000)
-      cy.get('input[id="password_input"]').clear().type("Aloha30!")
+      cy.get('input[id="password_input"]').clear().type("Password25")
       cy.wait(1000)
       cy.contains("Log in").click();
       cy.contains("Finance").click();
@@ -23,7 +23,44 @@ describe('Payments and Transaction Details Check', () => {
     const resultCount = parseInt(text, 10);
     expect(resultCount).to.be.gte(1);
 
+    //cy.writeFile('../Weekly_Smoke_Test_Report.html', '<p>2. BSS Payments:</p>' , {flag: 'a+'})
+
+
+    if(resultCount > 1)
+        {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p>2. BSS Payments: Could see atleast one Trasaction. <span style="color: green;">Test is passed.</span></p>',  { flag: 'a+' })
+
+     
+   { flag: 'a+' }
+    }
+    else
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p>2. BSS Payments: Unfortunately, no payments were found. <span style ="color: red;">Test is failed.</span></p>', { flag: 'a+' })
+    }
+    
+    { flag: 'a+' }
+         
+
     
   });
  });
 });
+
+
+
+
+  
+
+
+      
+      
+
+
+
+
+
+
+
+
+
+  

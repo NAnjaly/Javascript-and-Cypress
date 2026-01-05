@@ -49,13 +49,51 @@ describe('Gray Logs Check', () => {
          expect(diffMs, `Timestamp difference should be <= ${toleranceMs} ms`)
           .to.be.lessThan(toleranceMs);
 
-                  
+ 
+      cy.writeFile('../Weekly_Smoke_Test_Report.html', '<p>------------------------------------------------</p>' + '\r\n' , {flag: 'a+'} )
+
+  
+      cy.writeFile('../Weekly_Smoke_Test_Report.html', 'Grey Logs Checks:'  + '\r\n' , {flag: 'a+'})
+
+   
+
+          if(diffMs < toleranceMs)
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report.html', '<p> 1. GreyLogs Check: <span style="color: green;">Test is passed.</span></p>',  { flag: 'a+' })
+
+     
+   { flag: 'a+' }
+    }
+    else
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report.html', `<p>Free Bike Status is greater than ${diff} sec. <span style ="color: red;">Test is failed.</span></p> \n`, { flag: 'a+' })
+    }
+    
+    { flag: 'a+' }
+         
           });
 
         });
 
       });
       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 

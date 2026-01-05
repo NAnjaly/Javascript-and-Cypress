@@ -36,11 +36,34 @@ describe('GBFS Check', () => {
     // Assert the data is recent (within 5 minutes)
     expect(diff).to.be.lessThan(300);
 
+   { flag: 'a+' } 
+    cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html','\r\n', { flag: 'a+' })
+
+    cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p>------------------------------------------------</p>' + '\r\n' , {flag: 'a+'} )
+
+    cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p>GBFS Checks:</p>'  + '\r\n' , {flag: 'a+'})
+
+    cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html','\r\n', { flag: 'a+' })
+     // cy.writeFile('../Weekly_Smoke_Test_Report.html', '<p>1.Free Bike Status:</p>' , {flag: 'a+'})
+
+   
+     if(diff < 300)
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p> 1.Free Bike Status <span style="color: green;">Test is passed.</span></p>' ,  { flag: 'a+' })
+
+     
+   { flag: 'a+' }
+    }
+    else
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p> 1.Free Bike Status <span style ="color: red;">Test is failed.</span></p>', { flag: 'a+' })
+    }
+    
+    { flag: 'a+' }
+    
 })
 
-        })
-
-      })
+ })   })
     
   describe('GBFS Check', () => {
     it('Login to the GBFS using credentials with valid details', () => {
@@ -80,7 +103,20 @@ describe('GBFS Check', () => {
     // Assert the data is recent (within 5 minutes)
     expect(diff).to.be.lessThan(300);
 
-}) 
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html','\r\n', { flag: 'a+' })
+     
+    //  cy.writeFile('../Weekly_Smoke_Test_Report.html', '<p>2. Station Information:</p>' + '\r\n' , {flag: 'a+'})
+
+    if(diff < 300)
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p> 2. Station Information: <span style="color: green;">Test is passed.</span></p>' + '\r\n', { flag: 'a+' })
+    }
+    else
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p>2. Station Information: <span style="color: red;"> Test is failed.</p>' + '\r\n', { flag: 'a+' })
+    }
+
+  }) 
 
         })
       })
@@ -104,8 +140,8 @@ describe('GBFS Check', () => {
      
     });
   it('checks last_updated timestamp', () => {
-  cy.request('https://e-gbfs-test.cubic-hub.com/gbfs/en/station_status.json').then((response) => {
-  cy.log(JSON.stringify(response.body, null, 2));
+  cy.request('https://e.gbfs.test.cubic-hub.com/gbfs/en/station_status.json').then((response) => {
+  cy.log(JSON.stringify(response.body, null, 2));        
   console.log('FULL BODY:', response.body);
   const body = typeof response.body === 'string'
       ? JSON.parse(response.body)
@@ -123,6 +159,20 @@ describe('GBFS Check', () => {
 
     // Assert the data is recent (within 5 minutes)
     expect(diff).to.be.lessThan(300);
+
+    cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html','\r\n', { flag: 'a+' })
+
+      //cy.writeFile('../Weekly_Smoke_Test_Report.html', '<p>3. Station Status:</p>' + '\r\n' , {flag: 'a+'})
+
+    if(diff < 300)
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p>3. Station Status: <span style="color: green;">Test is passed.</span></p>' + '\r\n', { flag: 'a+' })
+    }
+    else
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p>3. Station Status: <span style="color: red;"> Test is failed.</p>' + '\r\n', { flag: 'a+' })
+    }
+
   });
 });
      
@@ -170,7 +220,24 @@ describe('GBFS Check', () => {
 
     // Assert the data is recent (within 5 minutes)
     expect(diff).to.be.lessThan(300);
+
+    cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html','\r\n', { flag: 'a+' })
+
+   // cy.writeFile('../Weekly_Smoke_Test_Report.html', '<p>4. Vehicle Types : </p>' + '\r\n' , {flag: 'a+'})
+    if(diff < 300)
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p>4. Vehicle Types : <span style="color: green;">Test is passed.</span></p>',  { flag: 'a+' })
+
+     
+   { flag: 'a+' }
+    }
+    else
+    {
+      cy.writeFile('../Weekly_Smoke_Test_Report_Env E.html', '<p>4. Vehicle Types : <span style ="color: red;">Test is failed.</span></p>', { flag: 'a+' })
+    }
     
+    { flag: 'a+' }
+
     });
     });
-  });
+  })
